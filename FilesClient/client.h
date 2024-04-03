@@ -66,7 +66,7 @@ public:
         // the Client class receives: io_context, host, port, user and pass
         
         Client(boost::asio::io_context& io_context, const std::string& host, int port, const std::string& user, const std::string& pass);
- //       Client(boost::asio::io_context& io_context, const std::string& ip, int port, const std::string& client_name, const std::string& file_path);
+        Client(boost::asio::io_context& io_context, const std::string& ip, int port, const std::string& client_name, const std::string& file_path);
         
 
 

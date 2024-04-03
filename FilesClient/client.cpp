@@ -34,14 +34,14 @@ Client::Client(boost::asio::io_context& io_context, const std::string& host, int
     boost::asio::connect(socket_, endpoints);
 }
 
-//Client::Client(boost::asio::io_context& io_context, const std::string& ip, int port, const std::string& client_name, const std::string& file_path)
-  //  : io_context_(io_context), socket_(io_context), client_name_(client_name), file_path_(file_path) {
-    // Resolve the server address
-   // tcp::resolver resolver(io_context_);
-   // auto endpoints = resolver.resolve(tcp::v4(), ip, std::to_string(port));
-    // Connect to the server
-   // boost::asio::connect(socket_, endpoints);
-//}
+Client::Client(boost::asio::io_context& io_context, const std::string& ip, int port, const std::string& client_name, const std::string& file_path)
+    : io_context_(io_context), socket_(io_context), client_name_(client_name), file_path_(file_path) {
+     Resolve the server address
+    tcp::resolver resolver(io_context_);
+    auto endpoints = resolver.resolve(tcp::v4(), ip, std::to_string(port));
+     Connect to the server
+    boost::asio::connect(socket_, endpoints);
+}
 
 
     
